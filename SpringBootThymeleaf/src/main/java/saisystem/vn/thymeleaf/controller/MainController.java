@@ -1,16 +1,17 @@
-package org.o7planning.thymeleaf.controller;
+package saisystem.vn.thymeleaf.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.o7planning.thymeleaf.form.PersonForm;
-import org.o7planning.thymeleaf.model.Person;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import saisystem.vn.thymeleaf.form.PersonForm;
+import saisystem.vn.thymeleaf.model.Person;
 
 @Controller
 public class MainController {
@@ -60,7 +61,7 @@ public class MainController {
             Person newPerson = new Person(firstName, lastName);
             persons.add(newPerson);
  
-            return "redirect:/yyy";
+            return "redirect:/personList";
         }
  
         model.addAttribute("errorMessage", errorMessage);
