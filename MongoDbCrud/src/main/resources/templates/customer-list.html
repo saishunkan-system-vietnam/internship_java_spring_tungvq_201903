@@ -20,6 +20,7 @@ td {
       <th>Id</th>
       <th>Name</th>
       <th>Address</th>
+      <th>Gender</th>
       <th>View</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -29,6 +30,7 @@ td {
         <td><p th:text="${customer.id}"></p></td>
         <td><p th:text="${customer.name}"></p></td>
         <td><p th:text="${customer.address}"></p></td>
+        <td><p th:text="${customer.gender}"></p></td>
         <td><a th:href="@{/customer-view/} + ${customer.id}">View</a></td>
         <td><a th:href="@{/customer-update/} + ${customer.id}">Edit</a></td>
         <td><a th:href="@{/customerDelete/} + ${customer.id}">Delete</a></td>
