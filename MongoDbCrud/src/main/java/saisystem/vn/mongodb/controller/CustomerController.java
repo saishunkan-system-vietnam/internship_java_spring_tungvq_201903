@@ -1,4 +1,6 @@
 package saisystem.vn.mongodb.controller;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,10 +50,12 @@ public class CustomerController {
   
   @RequestMapping("/saveCustomer")
   public String doSaveCustomer(@ModelAttribute("Customer") Customer customer, Model model) {
-    customerRepository.save(customer);
-    model.addAttribute("listCustomer", customerRepository.findAll());
-    return "customer-list";
-  }
+		  customerRepository.save(customer);
+		    model.addAttribute("listCustomer", customerRepository.findAll());
+		    return "customer-list";
+	
+	}
+  
   
   @RequestMapping("/updateCustomer")
   public String doUpdateCustomer(@ModelAttribute("Customer") Customer customer, Model model) {
@@ -66,4 +70,6 @@ public class CustomerController {
     model.addAttribute("listCustomer", customerRepository.findAll());
     return "customer-list";
   }
+  
+
 }
