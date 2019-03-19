@@ -21,11 +21,12 @@ td {
       <th>Name</th>
       <th>Address</th>
       <th>Gender</th>
+      <th>Birthday</th>
+      <th>So tuoi</th>
       <th>View</th>
       <th>Edit</th>
       <th>Delete</th>
-      <th>Birthday</th>
-      <th>Day</th>
+
     </tr>
     <th:block th:each="customer : ${listCustomer}">
       <tr>
@@ -34,11 +35,14 @@ td {
         <td><p th:text="${customer.address}"></p></td>
         <td><span th:if="${customer.gender == true}">Nam</span>
         <span th:if="${customer.gender == false}">Nu</span></td>
+        <td th:text="${customer.birthDay}"></td>
+ 		<!-- <td th:text="${customer.soTuoi()}"></td> -->
+ 
         <td><a th:href="@{/customer-view/} + ${customer.id}">View</a></td>
         <td><a th:href="@{/customer-update/} + ${customer.id}">Edit</a></td>
         <td><a th:href="@{/customerDelete/} + ${customer.id}">Delete</a></td>
- 		<td th:text="${customer.birthDay}"></td>
- 		<td th:text="${customer.dateNow}"></td>
+ 		
+ 		
  		</tr>
     </th:block>
   </table>
