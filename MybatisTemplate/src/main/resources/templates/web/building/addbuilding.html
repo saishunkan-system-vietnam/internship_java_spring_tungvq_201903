@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+  <a th:href="@{/index}">List Building</a><br />
+  <h1>Add new Customer:</h1>
+  <form th:action="@{/saveBuilding}" method="POST" th:object="${building}">
+      Name: <input th:field="*{name}"/> <br/> <br/>
+      nameJp: <input th:field="*{nameJp}"/> <br/> <br/>
+      heightM: <input th:field="*{heightM}"/> <br/> <br/>
+      heightFt: <input th:field="*{heightFt}"/> <br/> <br/>
+      floors: <input th:field="*{floors}"/> <br/> <br/>
+      year: <input th:field="*{year}"/> <br/> <br/>
+      city: <input th:field="*{city}"/> <br/> <br/>
+      image: <input th:field="*{image}"/> <br/> <br/>
+     
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+</html>
