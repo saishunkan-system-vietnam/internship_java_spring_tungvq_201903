@@ -1,9 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-  <a th:href="@{/index}">List Building</a><br />
+  <a th:href="@{/web/building/index}">List Building</a><br />
+  
   <h1>Add new Customer:</h1>
-  <form th:action="@{/saveBuilding}" method="POST" th:object="${building}">
+  
+  <form th:action="@{/web/building/saveBuilding}" method="POST" th:object="${building}">
       Name: <input th:field="*{name}"/> <br/> <br/>
       nameJp: <input th:field="*{nameJp}"/> <br/> <br/>
       heightM: <input th:field="*{heightM}"/> <br/> <br/>

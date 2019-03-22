@@ -16,7 +16,7 @@ td {
 <body>
 
  <h1>List Building:</h1>
-  <a th:href="@{/addbuilding}">Add Building</a>
+  <a th:href="@{/web/building/addbuilding}">Add Building</a>
   <br />
   <br />
 
@@ -33,19 +33,22 @@ td {
       <th>year</th>
       <th>city</th>
       <th>url image</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
     <th:block th:each="building : ${buildingList}">
       <tr>
         <td th:text="${building.id}"></td>
         <td><p th:text="${building.name}"></p></td>
         <td><p th:text="${building.nameJp}"></p></td>
-        <td th:text="${building.heightM}"></td>
+        <td><p th:text="${building.heightM}"></p></td>
         <td th:text="${building.heightFt}"></td>
         <td th:text="${building.floors}"></td>
  		<td><p th:text="${building.year}"></p></td>
  		<td><p th:text="${building.city}"></p></td>
  		<td><p th:text="${building.image}"></p></td>
- 		
+ 		<td><a th:href ="@{/web/building/editBuilding/} + ${building.id}">Edit</a></td>
+ 		<td><a th:href = "@{/web/building/deleteBuilding/} + ${building.id}">Delete</a></td>
  		</tr>
     </th:block>
    

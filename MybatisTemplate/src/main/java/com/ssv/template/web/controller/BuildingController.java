@@ -25,14 +25,25 @@ public class BuildingController {
 	@RequestMapping("/addbuilding")
 	  public String insertBuilding(Model model) {
 	    model.addAttribute("building", new Building());
-	    return "addbuilding";
+	    return BASE_DIR + "/addbuilding";
 	  }
 	
 	 @RequestMapping("/saveBuilding")
 	  public String doSaveCustomer(@ModelAttribute("Building") Building building, Model model) {
-		new BuildingService().insertBuilding(building);
+		int result = new BuildingService().insertBuilding(building);
+		if (result != 0) {
+			model.addAttribute("buildingList", new BuildingService().selectAllBuilding());
+			return BASE_DIR + "/index";
+		}
+		return null;
+	}
+	 
+	@RequestMapping("/deleteBuilding/{id}")
+	public String doDelete(@PathVariable int id,Model model) {
+		new BuildingService().deleteBuildingById(id);
 		model.addAttribute("buildingList", new BuildingService().selectAllBuilding());
 		return BASE_DIR + "/index";
+		
 	}
 	
 	

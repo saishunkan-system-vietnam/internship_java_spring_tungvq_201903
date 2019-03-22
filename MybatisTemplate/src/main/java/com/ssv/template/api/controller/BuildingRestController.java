@@ -28,4 +28,6 @@ public class BuildingRestController {
 		List<Building> list = new BuildingService().selectAllBuilding();
 		return list;
 	}
+	
+	
 }

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssv.template.data.mapper.BuildingMapper">
 	<insert id="insertBuilding" parameterType="Building" >
-        INSERT INTO Building (NAME) VALUES (#{name});
+        INSERT INTO Building (NAME, NAME_JP, HEIGHT_M, HEIGHT_FT, FLOORS, YEAR, CITY, IMAGE) VALUES (#{name},#{nameJp},#{heightM},#{heightFt},#{floors},#{year},#{city},#{image});
     </insert>
  
     <update id="updateBuilding" parameterType="Building">
