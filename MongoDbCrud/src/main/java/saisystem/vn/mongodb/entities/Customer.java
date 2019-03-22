@@ -1,5 +1,6 @@
 package saisystem.vn.mongodb.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -12,13 +13,25 @@ public class Customer {
 	private String id;
 	private String name;
 	private String address;
-	private Boolean gender; // true: Nam, false:Nu
-	@DateTimeFormat(pattern = "dd-MM-YYYY")
+	private Boolean gender; //true: Nam, false:Nu
+	@DateTimeFormat(pattern="dd-MM-YYYY")
 	private Date birthDay;
+	
+	@DateTimeFormat(pattern="dd-MM-YYYY")
+	private LocalDate dateNow = LocalDate.now();
 
 	// getter - setter
 	public String getId() {
 		return id;
+	}
+	
+	@DateTimeFormat(pattern="dd-MM-YYYY")
+	public LocalDate getDateNow() {
+		return dateNow;
+	}
+
+	public void setDateNow(LocalDate dateNow) {
+		this.dateNow = dateNow;
 	}
 
 	public void setId(String id) {
@@ -48,8 +61,7 @@ public class Customer {
 	public void setGender(Boolean gender) {
 		this.gender = gender;
 	}
-
-	@DateTimeFormat(pattern = "dd-MM-YYYY")
+	@DateTimeFormat(pattern="dd-MM-YYYY")
 	public Date getBirthDay() {
 		return birthDay;
 	}
@@ -57,19 +69,6 @@ public class Customer {
 	public void setBirthDay(Date birthDay) {
 		this.birthDay = birthDay;
 	}
-
-	public String genderString() {
-		if (this.gender) {
-			return "Nam";
-		}
-		return "Nu";
-	}
-
-//	public Long soTuoi() {
-//		Long result = 0L;
-//		result = ChronoUnit.DAYS.between(birthDay, LocalDate.now());
-//		return result;
-//	}
 
 //	public String BirdayString() {
 //		birthDay = new Date();
@@ -79,5 +78,5 @@ public class Customer {
 //		return sinhnhat;
 //	}
 //	
-
+	
 }
