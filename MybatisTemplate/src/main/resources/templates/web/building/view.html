@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot</title>
+<style>
+table, th, td, tr {
+  border: 1px solid black;
+}
+td {
+  padding-right: 30px;
+}
+</style>
+</head>
+<body>
+	<a th:href="@{/web/building/index}">List Building</a><br />
+<h1>View</h1>
+	<table>
+		<tr>
+			<th>id</th>
+			<th>Name</th>
+			<th>namejp</th>
+			<th>heightm</th>
+			<th>heightft</th>
+			<th>floors</th>
+			<th>year</th>
+			<th>city</th>
+			<th>url image</th>	
+		</tr>
+		
+		<tr>
+			<td th:text="${building.id}"></td>
+	        <td><p th:text="${building.name}"></p></td>
+	        <td><p th:text="${building.nameJp}"></p></td>
+	        <td><p th:text="${building.heightM}"></p></td>
+	        <td th:text="${building.heightFt}"></td>
+	        <td th:text="${building.floors}"></td>
+	 		<td><p th:text="${building.year}"></p></td>
+	 		<td><p th:text="${building.city}"></p></td>
+	 		<td><p th:text="${building.image}"></p></td>
+		</tr>
+
+	</table>
+	
+</body>
+</html>

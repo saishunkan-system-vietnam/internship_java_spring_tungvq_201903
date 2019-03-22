@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+  <a th:href="@{/web/building/index}">List Building</a><br />
+  <h1>Edit Building</h1>
+  
+  <form th:action="@{/web/building/editBuilding}" method="POST" th:object="${building}">
+  Id <input th:field="*{id}" readonly ="true" /> <br/> <br/>
+  Name <input th:field="*{name}" /></br><br/>
+  namejp <input th:field="*{nameJp}"/><br/><br/>
+  heightm <input th:field="*{heightM}"/><br/><br/>
+  heightft <input th:field="*{heightFt}"/><br/><br/>
+  floors <input th:field="*{floors}"/><br/><br/>
+  year <input th:field="*{year}"/><br/><br/>
+  city <input th:field="*{city}"/><br/><br/>
+  url image <input th:field="*{image}"/><br/><br/>
+  <input type="submit" value="Submit" />
+  </form>
+</body>
+</html>

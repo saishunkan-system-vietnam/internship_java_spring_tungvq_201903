@@ -12,7 +12,12 @@ td {
 }
 </style>
 </head>
-
+<SCRIPT LANGUAGE="JavaScript">
+      function confirmAction() {
+        return confirm("DO YOU WANT DELETE ?")
+      }
+ 
+</SCRIPT>
 <body>
 
  <h1>List Building:</h1>
@@ -33,6 +38,7 @@ td {
       <th>year</th>
       <th>city</th>
       <th>url image</th>
+      <th>View</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -47,8 +53,9 @@ td {
  		<td><p th:text="${building.year}"></p></td>
  		<td><p th:text="${building.city}"></p></td>
  		<td><p th:text="${building.image}"></p></td>
- 		<td><a th:href ="@{/web/building/editBuilding/} + ${building.id}">Edit</a></td>
- 		<td><a th:href = "@{/web/building/deleteBuilding/} + ${building.id}">Delete</a></td>
+ 		<td><a th:href = "@{/web/building/view/} + ${building.id}">View</a>
+ 		<td><a th:href = "@{/web/building/editbuilding-form/} + ${building.id}">Edit</a></td>
+ 		<td><a th:href = "@{/web/building/deleteBuilding/} + ${building.id}" + onclick="return confirmAction()">Delete</a></td>
  		</tr>
     </th:block>
    
