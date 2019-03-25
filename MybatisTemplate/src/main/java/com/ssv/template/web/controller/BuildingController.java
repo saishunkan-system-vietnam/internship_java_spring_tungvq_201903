@@ -31,7 +31,7 @@ public class BuildingController {
 	  }
 	
 	 @RequestMapping("/saveBuilding")
-	  public String doSaveCustomer(@ModelAttribute("Building") Building building, Model model) {
+	  public String doSaveBuilding(@ModelAttribute("Building") Building building, Model model) {
 		int result = new BuildingService().insertBuilding(building);
 		if (result != 0) {
 			model.addAttribute("buildingList", new BuildingService().selectAllBuilding());

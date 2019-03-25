@@ -2,15 +2,18 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Spring Boot</title>
-<style>
-table, th, td, tr {
-  border: 1px solid black;
-}
-td {
-  padding-right: 30px;
-}
-</style>
+<link rel="stylesheet" th:href="@{/css/table/add-student-style.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/table/style.css}" type="text/css">
+	<style type="text/css">
+	body{
+	 background-image: url("/images/123.jpg");
+            background-size: cover;   
+            }
+            h1 {
+				  color: White;
+				 text-align: center;
+			}
+            </style>
 </head>
 <SCRIPT LANGUAGE="JavaScript">
       function confirmAction() {
@@ -19,13 +22,17 @@ td {
  
 </SCRIPT>
 <body>
-
+	<div id="container">
+	
+		<div id="content">
  <h1>List Building:</h1>
-  <a th:href="@{/web/building/addbuilding}">Add Building</a>
+ <input type="button" value="Add Building" align="center"
+ onclick = "window.location.href='/web/building/addbuilding'; return false;"/>
+  
   <br />
   <br />
 
-<table>
+<table align="center">
 
 	
     <tr>
@@ -46,7 +53,7 @@ td {
       <tr>
         <td th:text="${building.id}"></td>
         <td><p th:text="${building.name}"></p></td>
-        <td><p th:text="${building.nameJp}"></p></td>
+        <td><a th:href = "@{/web/building/view/} + ${building.id}"><p th:text="${building.nameJp}"></p></a></td>
         <td><p th:text="${building.heightM}"></p></td>
         <td th:text="${building.heightFt}"></td>
         <td th:text="${building.floors}"></td>
@@ -60,6 +67,8 @@ td {
     </th:block>
    
 </table>
+</div>
+</div>
 
 </body>
 </html>

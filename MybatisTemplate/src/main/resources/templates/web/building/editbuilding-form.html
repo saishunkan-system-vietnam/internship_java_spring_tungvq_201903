@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-  <a th:href="@{/web/building/index}">List Building</a><br />
+
   <h1>Edit Building</h1>
   
   <form th:action="@{/web/building/editBuilding}" method="POST" th:object="${building}">
@@ -13,7 +13,9 @@
   year <input th:field="*{year}"/><br/><br/>
   city <input th:field="*{city}"/><br/><br/>
   url image <input th:field="*{image}"/><br/><br/>
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" /> 
+  <input type = "button" value= "Back" onclick="window.location.href='/web/building/index';"/>
+  <a th:href = "@{/web/building/view/} + ${building.id}">View</a>
   </form>
 </body>
 </html>

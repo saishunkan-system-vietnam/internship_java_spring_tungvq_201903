@@ -1,18 +1,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Spring Boot</title>
-<style>
-table, th, td, tr {
-  border: 1px solid black;
-}
-td {
-  padding-right: 30px;
-}
-</style>
+<link rel="stylesheet" th:href="@{/css/table/add-student-style.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/table/style.css}" type="text/css">
 </head>
 <body>
-	<a th:href="@{/web/building/index}">List Building</a><br />
+	
+	
 <h1>View</h1>
+	<div id="container">
+	<div id="content">
 	<table>
 		<tr>
 			<th>id</th>
@@ -38,7 +35,11 @@ td {
 	 		<td><p th:text="${building.image}"></p></td>
 		</tr>
 
-	</table>
+	</table><br/>
 	
+	<input type="button" value="Back" onclick="window.location.href='/web/building/index';"/>
+	<a th:href = "@{/web/building/editbuilding-form/} + ${building.id}">Edit</a>
+	</div>
+	</div>
 </body>
 </html>
