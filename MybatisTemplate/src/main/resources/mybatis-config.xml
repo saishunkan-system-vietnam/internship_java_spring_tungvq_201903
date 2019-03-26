@@ -10,6 +10,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias alias="Building" type="com.ssv.template.model.Building" />
+		<typeAlias alias="Project" type="com.ssv.template.model.Project" />
 
 	</typeAliases>
 	<typeHandlers>
@@ -40,5 +41,6 @@
 	<mappers>
 		<mapper resource="com/ssv/template/data/mapper/BuildingMapper.xml" />
 		<mapper resource="com/ssv/template/data/mapper/AccountMapper.xml" />
+		<mapper resource="com/ssv/template/data/mapper/ProjectMapper.xml"/>
 	</mappers>
 </configuration>

@@ -35,5 +35,6 @@ public class BuildingRepository extends Repository<Building, BuildingMapper> {
 			return mapper.deleteBuildingById(id);
 		});
 	}
+	
 
 }

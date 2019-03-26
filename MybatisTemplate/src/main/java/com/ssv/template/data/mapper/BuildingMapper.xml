@@ -10,12 +10,12 @@
     <update id="updateBuilding" parameterType="Building">
         UPDATE Building SET NAME = #{name} WHERE ID = #{id};
         UPDATE Building SET NAME_JP = #{nameJp} WHERE ID = #{id};
-         UPDATE Building SET HEIGHT_M = #{heightM} WHERE ID = #{id};
-          UPDATE Building SET HEIGHT_FT = #{heightFt} WHERE ID = #{id};
-           UPDATE Building SET FLOORS = #{floors} WHERE ID = #{id};
-            UPDATE Building SET YEAR = #{year} WHERE ID = #{id};
-             UPDATE Building SET CITY = #{city} WHERE ID = #{id};
-              UPDATE Building SET IMAGE = #{image} WHERE ID = #{id};
+        UPDATE Building SET HEIGHT_M = #{heightM} WHERE ID = #{id};
+        UPDATE Building SET HEIGHT_FT = #{heightFt} WHERE ID = #{id};
+        UPDATE Building SET FLOORS = #{floors} WHERE ID = #{id};
+        UPDATE Building SET YEAR = #{year} WHERE ID = #{id};
+        UPDATE Building SET CITY = #{city} WHERE ID = #{id};
+        UPDATE Building SET IMAGE = #{image} WHERE ID = #{id};
     </update>
      
     <delete id="deleteBuildingById" parameterType="int">

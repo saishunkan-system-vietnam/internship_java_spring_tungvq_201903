@@ -10,5 +10,4 @@ public interface BuildingMapper extends Mapper<Building> {
 	public int deleteBuildingById(int id);
 	
 	public int selectBuildingById(int id);
-
 }

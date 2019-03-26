@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssv.template.data.mapper.ProjectMapper">
+	<insert id="insertProject" parameterType="Project" >
+        INSERT INTO Project (NAMEPROJECT, STARTDATE, ENDDATE) VALUES (#{nameproject},#{startdate},#{enddate});
+    </insert>
+ 
+    <update id="updateProject" parameterType="Project">
+        UPDATE Project SET NAMEPROJECT = #{nameproject} WHERE ID = #{id};
+        UPDATE Project SET STARTDATE = #{startdate} WHERE ID = #{id};
+        UPDATE Project SET ENDDATE = #{enddate} WHERE ID = #{id};
+     
+    </update>
+     
+    <delete id="deleteProjectById" parameterType="int">
+        DELETE from Project WHERE ID = #{id};
+    </delete>
+    
+    <select id="selectProjectById" parameterType="int">
+    	SELECT * FROM Project WHERE ID = #{id};
+    </select>
+    
+    <select id="selectProjectByName" parameterType="Project">
+    	SELECT * FROM Project WHERE NAMEPROJECT LIKE = %#{nameproject}%
+    </select>
+    
+     
+    <resultMap id = "result" type = "Project">
+       <result property = "id" column = "ID"/>
+       <result property = "nameproject" column = "NAMEPROJECT"/>
+    </resultMap>
+	
+</mapper>
