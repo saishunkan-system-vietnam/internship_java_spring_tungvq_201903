@@ -7,7 +7,8 @@
 <link rel="stylesheet" th:href="@{/css/table/style.css}" type="text/css">
 <link rel="stylesheet" th:href="@{/css/searchbox/search.css}"
 	type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 body {
 	background-image: url("/images/background.jpg");
@@ -20,25 +21,56 @@ h1 {
 }
 </style>
 </head>
+
+
 <SCRIPT LANGUAGE="JavaScript">
 	function confirmAction() {
 		return confirm("DO YOU WANT DELETE ?")
 	}
 </SCRIPT>
-<body>
-	<div id="container">
 
+
+<body>
+
+	<div id="wrapper">
+		<div id="header"><h1>List Building:</h1></div>
+		
+	</div>
+	<div id="container">
+	
 		<div id="content">
-			<h1>List Building:</h1>
+			
 			<input type="button" value="Add Project" align="center"
 				onclick="window.location.href='/web/project/addproject'; return false;" />
 
 			<br /> <br />
-			<form class="example" action="searchProject" style="margin:auto;max-width:300px">
-  			<input type="text" placeholder="Search.." name="search">
-  			<button type="submit"><i class="fa fa-search"></i></button>
-			</form></br>
-
+			<form class="example"
+				th:action="@{/web/project/searchProject/search}" method="GET"
+				style="margin: auto; max-width: 300px">
+				<input type="text" placeholder="Name Project Search" name="q">
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+			</br> <br /> <br />
+			<form class="example" th:action="@{/web/project/startProject/search}"
+				method="GET" style="margin: auto; max-width: 300px">
+				<input type="text" placeholder="Day Start : yyyy-MM-dd "
+					name="startsearch">
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+			</br> <br /> <br />
+			<form class="example" th:action="@{/web/project/endProject/search}"
+				method="GET" style="margin: auto; max-width: 300px">
+				<input type="text" placeholder="Day End Project Search "
+					name="endsearch">
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+			</br>
 			<table align="center">
 
 

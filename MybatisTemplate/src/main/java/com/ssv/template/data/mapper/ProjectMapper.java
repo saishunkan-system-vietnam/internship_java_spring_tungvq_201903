@@ -1,5 +1,6 @@
 package com.ssv.template.data.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -16,9 +17,9 @@ public interface ProjectMapper extends Mapper<Project> {
 	
 	public int selectProjectByName(Project project);
 	
-	List<Project> findByNameContaining(String q);
+	List<Project> findByNameContaining(String a);
 	
-	
+	List<Project> findByDateContaining(String b);
 	
 }
 

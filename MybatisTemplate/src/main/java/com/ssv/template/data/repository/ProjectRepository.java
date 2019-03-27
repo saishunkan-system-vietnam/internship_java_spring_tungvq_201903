@@ -1,5 +1,6 @@
 package com.ssv.template.data.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,12 +40,17 @@ public class ProjectRepository extends Repository<Project, ProjectMapper> {
 		});
 	}
 
-	public static List<Project> findByNameContaining(String q) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Project> findByNameContaining(String a) {
+		return execute((mapper) -> {
+			return mapper.findByNameContaining(a);
+		});
 	}
-	
-	
+
+	public List<Project> findByDateContaining(String b) {
+		return execute((mapper) -> {
+			return mapper.findByDateContaining(b);
+		});
+	}
 	
 }
 	

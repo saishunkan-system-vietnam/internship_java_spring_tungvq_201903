@@ -1,0 +1,33 @@
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot</title>
+<link rel="stylesheet" th:href="@{/css/table/add-student-style.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/table/style.css}" type="text/css">
+</head>
+<body>
+
+	
+	<h1>search</h1>
+	<input type="button" value="Back" onclick = "window.location.href='/web/project/index2';">
+	
+	<div id="container">
+	<div id="content">
+	<table>
+	<tr>
+		<th>ID</th>
+		<th>Name Project</th>
+		<th>Start Project</th>
+		<th>End Project</th>
+	</tr>
+	
+	<tr>
+		<td><p th:text="${project.id}"></p></td>
+		<td><p th:text="${project.nameproject}"></p></td>
+		<td th:text="${project.startdate}"></td>
+		<td th:text="${project.enddate}"></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+</body>
+</html>

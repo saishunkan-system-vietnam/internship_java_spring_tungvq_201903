@@ -22,14 +22,16 @@
     	SELECT * FROM Project WHERE ID = #{id};
     </select>
     
-    <select id="selectProjectByName" parameterType="Project">
-    	SELECT * FROM Project WHERE NAMEPROJECT LIKE = %#{nameproject}%
-    </select>
+    <resultMap id = "result" type = "Project"></resultMap>
+    <select id="findByNameContaining" parameterType="string" resultMap="result">
+  			SELECT * FROM Project WHERE nameproject like '%'||#{a}||'%'
+	</select>
     
-     
-    <resultMap id = "result" type = "Project">
-       <result property = "id" column = "ID"/>
-       <result property = "nameproject" column = "NAMEPROJECT"/>
-    </resultMap>
+ 	<resultMap id = "result1" type = "Project"></resultMap>
+    <select id="findByDateContaining" parameterType="string" resultMap="result1">
+  			SELECT * FROM Project WHERE to_char(startdate, 'YYYY-MM-DD') = #{b} 
+	</select>
+    
+   
 	
 </mapper>

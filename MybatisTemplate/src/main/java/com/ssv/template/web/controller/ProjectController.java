@@ -1,5 +1,7 @@
 package com.ssv.template.web.controller;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
@@ -7,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssv.template.data.repository.ProjectRepository;
 import com.ssv.template.model.Project;
@@ -51,14 +55,14 @@ public class ProjectController {
 	
 	@RequestMapping("/editproject-form/{id}")
 	public String updateProject(@PathVariable int id, Model model) {
-		Optional<Project> project = new ProjectRepository().findById(id); ;
+		Optional<Project> project = new ProjectRepository().findById(id); 
 	    if (project.isPresent()) {
 	      model.addAttribute("project", project.get());
 	    }
 	   
 		return BASE_DIR + "/editproject-form";
-		
 	}
+	
 	
 	@RequestMapping("/editProject")
 	public String successUpdateProject(@ModelAttribute("Project") Project project, Model model) {
@@ -70,11 +74,32 @@ public class ProjectController {
 	}
 	
 	
+	@RequestMapping("/searchProject/search")
+	public String search(@RequestParam("q") String q, Model model) {
+		List<Project> project = new ProjectService().search(q);
+		System.out.println(project);
+//		for(Project a : project) {
+//			if (q.equals(a.getNameproject())) {			
+//			}
+			model.addAttribute("projectList", new ProjectService().search(q));
+			return BASE_DIR + "/index2";
+	}
+	
+	@RequestMapping("/startProject/search")
+	public String searchDate(@RequestParam("startsearch") String startsearch, Model model) {
+		List<Project> project = new ProjectService().searchStart(startsearch);
+		System.out.println(project);
+
+			model.addAttribute("projectList", new ProjectService().searchStart(startsearch));
+			return BASE_DIR + "/index2";
+	}
+
+	
 	@RequestMapping("/view/{id}")
 	public String view(@PathVariable int id, Model model) {
 		Optional<Project> project = new ProjectRepository().findById(id);
 		if (project.isPresent()) {
-			model.addAttribute("project", project.get());
+			Model addAttribute = model.addAttribute("project", project.get());
 		}
 		return BASE_DIR + "/view";
 	}

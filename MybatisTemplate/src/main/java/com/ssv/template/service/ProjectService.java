@@ -1,5 +1,6 @@
 package com.ssv.template.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,8 +25,8 @@ public class ProjectService {
 		return new ProjectRepository().findAll();
 	}
 	
-	public List<Project> search(String q) {
-        return ProjectRepository.findByNameContaining(q);
+	public List<Project> search(String a) {
+        return new ProjectRepository().findByNameContaining(a);
     }
 	
 	
@@ -35,6 +36,10 @@ public class ProjectService {
 			return optProject.get();
 		}
 		return null;
+	}
+
+	public List<Project> searchStart(String b) {
+		 return new ProjectRepository().findByDateContaining(b);
 	}
 
 }
