@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Edit</h1>
+
+<form th:action="@{/web/project/editProject}" method="GET" th:object="${project}">
+	ID <input th:field= "*{id}" readonly="true"><br/>
+	Name Project <input th:field= "*{nameproject}"><br/>
+	Start Project <input th:field = "*{startdate}"><br/>
+	End Project <input th:field = "*{enddate}"><br>
+	<input type="submit" value ="SUBMIT"/>
+</form>
+<input type="button" value="Back" onclick="window.location.href='/web/project/index2';">
+<a th:href="@{/web/project/view/}+ ${project.id}">View</a>
+</body>
+</html>
