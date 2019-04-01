@@ -17,7 +17,8 @@ Thực tập Java Spring - Web Bất động sản - Vũ Quang Tùng - 201903
 + Trong màn hình thêm project có button quay lại danh sách project và button lưu project
 + Trong màn hình sửa project có button quay lại chi tiết project và button lưu project
 
-Công việc nghiệm thu
+=============================================================================
+CÔNG VIỆC NGHIỆM THU
 
 Tạo 2 bảng trong cơ sở dữ liệu
 
