@@ -16,3 +16,35 @@ Thực tập Java Spring - Web Bất động sản - Vũ Quang Tùng - 201903
 + Trong chi tiết project thêm button sửa để sang trang sửa project, thêm button quay lại để quay lại danh sách project
 + Trong màn hình thêm project có button quay lại danh sách project và button lưu project
 + Trong màn hình sửa project có button quay lại chi tiết project và button lưu project
+
+Công việc nghiệm thu
+
+Tạo 2 bảng trong cơ sở dữ liệu
+
+[project]
+id int tự tăng
+name varchar(1000)
+start_date timestamp
+end_date timestamp
+building_id int
+
+[building]
+id int tự tăng
+name varchar(1000)
+area float
+floor int
+
+Yêu cầu:
+Tạo màn hình thêm, sửa, xóa building
+Tạo màn hình danh sách building có chức năng tìm kiếm theo:
+ + tên
+ + diện tích from to (2 ô input)
+ + số tầng from to (2 ô input)
+
+Tạo màn hình thêm, sửa, xóa project
+Thêm liên kết building với project thông qua building_id (nâng cao)
+Tạo màn hình danh sách project có chức năng tìm kiếm theo 
+ + tên
+ + ngày bắt đầu
+ + ngày kết thúc
+ + tên building (nâng cao)
