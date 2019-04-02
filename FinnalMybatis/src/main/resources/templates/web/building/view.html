@@ -1,0 +1,13 @@
+<html xmlns="http://www.thymeleaf.org">
+<body>
+	<h1>View</h1>
+	
+	id: <span th:text = "${building.id}" ></span><br/>
+	Name:<span th:text = "${building.name}"></span><br/>
+	Area:<span th:text = "${building.area}"></span><br/>
+	Floor:<span th:text = "${building.floor}"></span><br/><br/>
+	
+	<input type="button" value="Back" onclick="window.location.href='/web/building/index'">
+	<br/>
+</body>
+</html>

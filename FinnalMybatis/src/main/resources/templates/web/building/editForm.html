@@ -1,0 +1,15 @@
+<html xmlns="http://www.thymeleaf.org">
+<body>
+	<h1>Edit</h1>
+	
+	<form th:action="@{/web/building/doneEdit}" method="get" th:object="${building}">
+		Id: <input th:field="*{id}" readonly = "true"><br/>
+		Name: <input th:field="*{name}"><br/>
+		Area: <input th:field="*{area}"><br/>
+		Floor: <input th:field="*{floor}"><br/>	
+		<input type="submit" value="Submit">
+		<input type="button" value="Back" onclick="window.location.href='/web/building/index'">
+	</form>
+	
+</body>
+</html>

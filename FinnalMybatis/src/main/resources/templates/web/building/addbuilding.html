@@ -1,0 +1,14 @@
+<html xmlns="http://www.thymeleaf.org">
+<body>
+	<h1> Add Building</h1>
+	<input type="button" value="Back" onclick="window.location.href='/web/building/index'"><br/>
+	
+	<form th:action="@{/web/building/successAdd}" method="GET" th:object="${building}">
+		Name: <input th:field="*{name}" ><br/>
+		Area: <input th:field="*{area}" ></br>
+		Floor:<input th:field="*{floor}"></br>
+		<input type="submit" value="Submit">
+	</form>
+	
+</body>
+</html>

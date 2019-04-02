@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/css/table/add-student-style.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/table/style.css}" type="text/css">
+	<style type="text/css">
+	body{
+	 background-image: url("/images/123.jpg");
+            background-size: cover;   
+            }
+            h1 {
+				  color: White;
+				 text-align: center;
+			}
+            </style>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+      function confirmAction() {
+        return confirm("DO YOU WANT DELETE ?")
+      }
+ 
+</SCRIPT>
+<body>
+	<div id="container">
+	
+		<div id="content">
+ <h1>List Building:</h1>
+ 
+ <input type="button" value="Add Building" align="center"
+ onclick = "window.location.href='/web/building/addbuilding'; return false;"/><br/>
+ 
+ <form th:action="@{/web/building/search}" methor="Get" >
+ 	<span><input type = "text" placeholder = "Name" name = "name"/></span>
+ 	
+ 	<span><input type = "text" placeholder = "Area From" name = "arfrom"/></span>
+ 	<span><input type = "text" placeholder = "Area To" name = "arto"/></span>
+ 	
+ 	<span><input type = "text" placeholder = "Floor From" name = "floorfrom"/></span>
+ 	<span><input type = "text" placeholder = "Floor To" name = "floorto"/></span>
+ 	
+ 	<button type="submit" value="Submit">Search</button>
+ </form>
+
+<table align="center">
+    <tr>
+    	<th>Id</th>
+      <th>Name</th>
+      <th>area</th>
+      <th>floor</th>
+      <th>View</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </tr>
+    
+    <th:block th:each="building : ${buildingList}">
+     
+     <tr>
+        <td th:text="${building.id}"></td>
+        <td><p th:text="${building.name}"></p></td>
+      	<td th:text="${building.area}"></td>
+      	<td th:text="${building.floor}"></td>
+      	<td><a th:href="@{/web/building/view/} + ${building.id}">View</a></td>
+      	<td><a th:href="@{/web/building/deleteBuilding/} + ${building.id}" + onclick="return confirmAction()">Delete</a></td>
+      	<td><a th:href="@{/web/building/editForm/} + ${building.id}">Edit</a></td>
+ 	</tr>
+    </th:block>
+</table>
+
+</div>
+</div>
+
+</body>
+</html>
