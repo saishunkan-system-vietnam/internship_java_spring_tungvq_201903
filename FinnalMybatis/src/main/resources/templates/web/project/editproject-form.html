@@ -3,13 +3,32 @@
 <h1>Edit</h1>
 
 <form th:action="@{/web/project/editProject}" method="GET" th:object="${project}">
-	ID <input th:field= "*{id}" readonly="true"><br/>
-	Name Project <input th:field= "*{nameproject}"><br/>
-	Start Project <input th:field = "*{startdate}"><br/>
-	End Project <input th:field = "*{enddate}"><br>
-	<input type="submit" value ="SUBMIT"/>
+
+	<table>
+		<tr>
+			<td>ID</td>
+			<td><input th:field= "*{id}" readonly="true"></td>
+		</tr>
+		<tr>
+			<td>Name Project</td> 
+			<td><input th:field= "*{nameproject}"></td>
+		</tr>
+		<tr>
+			<td>Start Project</td>
+			<td><input th:field = "*{startdate}"></td>
+		</tr>
+		<tr>
+			<td>End Project</td> 
+			<td><input th:field = "*{enddate}"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value ="SUBMIT"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="Back" onclick="window.location.href='/web/project/index2';"></td>
+		</tr>
+	</table>
 </form>
-<input type="button" value="Back" onclick="window.location.href='/web/project/index2';">
 <a th:href="@{/web/project/view/}+ ${project.id}">View</a>
 </body>
 </html>

@@ -3,12 +3,30 @@
 	<h1>Edit</h1>
 	
 	<form th:action="@{/web/building/doneEdit}" method="get" th:object="${building}">
-		Id: <input th:field="*{id}" readonly = "true"><br/>
-		Name: <input th:field="*{name}"><br/>
-		Area: <input th:field="*{area}"><br/>
-		Floor: <input th:field="*{floor}"><br/>	
-		<input type="submit" value="Submit">
-		<input type="button" value="Back" onclick="window.location.href='/web/building/index'">
+		<table>
+			<tr>
+				<td>Id:</td> 
+				<td><input th:field="*{id}" readonly = "true"></td>
+			</tr>
+			<tr>
+				<td>Name:</td> 
+				<td><input th:field="*{name}"></td>
+			</tr>
+			<tr>
+				<td>Area:</td> 
+				<td><input th:field="*{area}"></td>
+			</tr>
+			<tr>
+				<td>Floor:</td> 
+				<td><input th:field="*{floor}"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="Back" onclick="window.location.href='/web/building/index'"></td>
+			</tr>
+		</table>
 	</form>
 	
 </body>

@@ -14,8 +14,24 @@ public class Project {
 	private Date startdate;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date enddate;
+	private int buildingId;
+	private Building building;
 	
-	
+	public int getBuildingId() {
+		return buildingId;
+	}
+	public void setBuildingid(int buildingId) {
+		this.buildingId = buildingId;
+	}
+	public Building getBuilding() {
+		return building;
+	}
+	public void setBuilding(Building building) {
+		this.building = building;
+	}
+	public void setBuildingId(int buildingId) {
+		this.buildingId = buildingId;
+	}
 	public int getId() {
 		return id;
 	}

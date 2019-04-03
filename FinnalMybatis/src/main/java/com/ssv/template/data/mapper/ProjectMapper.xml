@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssv.template.data.mapper.ProjectMapper">
 	<insert id="insertProject" parameterType="Project" >
-        INSERT INTO Project (NAMEPROJECT, STARTDATE, ENDDATE) VALUES (#{nameproject},#{startdate},#{enddate});
+        INSERT INTO Project (NAMEPROJECT, STARTDATE, ENDDATE, BUILDING_ID) VALUES (#{nameproject},#{startdate},#{enddate},#{buildingId});
     </insert>
  
     <update id="updateProject" parameterType="Project">
@@ -24,14 +24,21 @@
     
     <resultMap id = "result" type = "Project"></resultMap>
     <select id="findByNameContaining" parameterType="string" resultMap="result">
-  			SELECT * FROM Project WHERE nameproject like '%'||#{a}||'%'
+  			SELECT * FROM Project 
+  			inner join building on Project.building_id = building.id
+  			<if test="namebuilding != null and namebuilding != ''">
+  				WHERE name like '%'||#{namebuilding}||'%'
+  			</if>
+  			<if test="nameproject != null and nameproject != ''">
+  				WHERE nameproject like '%'||#{nameproject}||'%'
+  			</if>
+  			<if test="startsearch != null and startsearch != ''">
+				AND to_char(startdate, 'YYYY-MM-DD') > #{startsearch} 
+			</if>
+			<if test="endsearch != null and endsearch != ''">
+				and #{endsearch} > to_char(enddate, 'YYYY-MM-DD')
+			</if>
 	</select>
     
- 	<resultMap id = "result1" type = "Project"></resultMap>
-    <select id="findByDateContaining" parameterType="string" resultMap="result1">
-  			SELECT * FROM Project WHERE to_char(startdate, 'YYYY-MM-DD') = #{b} 
-	</select>
-    
-   
 	
 </mapper>

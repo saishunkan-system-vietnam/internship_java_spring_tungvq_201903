@@ -3,6 +3,7 @@ package com.ssv.template.data.mapper;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 
 import com.ssv.template.model.Project;
 
@@ -17,9 +18,10 @@ public interface ProjectMapper extends Mapper<Project> {
 	
 	public int selectProjectByName(Project project);
 	
-	List<Project> findByNameContaining(String a);
+	List<Project> findByNameContaining(@Param("nameproject") String nameproject,@Param("startsearch") String startsearch,@Param("endsearch") String endsearch,@Param("namebuilding") String namebuilding);
 	
 	List<Project> findByDateContaining(String b);
+	
 	
 }
 
