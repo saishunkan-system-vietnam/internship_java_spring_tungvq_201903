@@ -1,17 +1,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <body>
-  
-  
   <h1>Add new Project:</h1>
   
   <form th:action="@{/web/project/saveProject}" method="POST" th:object="${project}">
-      Name: <input th:field="*{nameproject}" placeholder = "Ten du an"/> <br/> <br/>
-      Start: <input th:field="*{startdate}" placeholder = "yyyy-MM-dd"/> <br/> <br/>
-      End: <input th:field="*{enddate}" placeholder = "yyyy-MM-dd"/> <br/> <br/>
-      Building Id: <input th:field="*{buildingId}" placeholder = "number"/> <br/> <br/>
-    <input type="submit" value="Submit" />
+  
+	  <table>
+		  <tr>
+		      <td>Name:</td> 
+		      <td><input th:field="*{nameproject}" placeholder = "Ten du an"/></td>
+		  </tr>
+		  <tr>
+		      <td>Start:</td> 
+		      <td><input th:field="*{startdate}" placeholder = "yyyy-MM-dd"/></td>
+		  </tr>
+		  <tr>
+		      <td>End:</td> 
+		      <td><input th:field="*{enddate}" placeholder = "yyyy-MM-dd"/></td>
+		  </tr>
+		  <tr>
+		      <td>Building Id:</td> 
+		      <td><input th:field="*{buildingId}" placeholder = "number"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="submit" value="Submit" /></td>
+		    <td><input type="button" value="Back" onclick="window.location.href='/web/project/index2';"></td>
+		  </tr>
+	  </table>
+	  
   </form>
-  <input type="button" value="Back" onclick="window.location.href='/web/project/index2';">
+  
 </body>
 </html>

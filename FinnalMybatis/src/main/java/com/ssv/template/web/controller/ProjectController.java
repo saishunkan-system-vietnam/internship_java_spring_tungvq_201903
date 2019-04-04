@@ -77,7 +77,11 @@ public class ProjectController {
 	@RequestMapping("/searchProject/search")
 	public String search(@RequestParam("nameproject") String nameproject, @RequestParam("startsearch") String startsearch, @RequestParam("endsearch") String endsearch,@RequestParam("namebuilding") String namebuilding,Model model) {
 		List<Project> project = new ProjectService().search(nameproject,startsearch,endsearch,namebuilding);
-		model.addAttribute("projectList", new ProjectService().search(nameproject,startsearch,endsearch,namebuilding));
+		model.addAttribute("projectList", project);
+		model.addAttribute("nameproject", nameproject);
+		model.addAttribute("startsearch", startsearch);
+		model.addAttribute("endsearch", endsearch);
+		model.addAttribute("namebuilding", namebuilding);
 			return BASE_DIR + "/index2";
 	}
 	

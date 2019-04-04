@@ -26,22 +26,28 @@
 	
 		<div id="content">
  <h1>List Building:</h1>
+<div style = "width:1390px; margin:auto; padding:10px; ">
+	<input type="button" value="Add Building" align="center"
+	onclick = "window.location.href='/web/building/addbuilding'; return false;"/><br/>
+</div>
  
- <input type="button" value="Add Building" align="center"
- onclick = "window.location.href='/web/building/addbuilding'; return false;"/><br/>
- 
- <form th:action="@{/web/building/search}" methor="Get" >
- 	<span><input type = "text" placeholder = "Name" name = "name"/></span>
- 	
- 	<span><input type = "text" placeholder = "Area From" name = "arfrom"/></span>
- 	<span><input type = "text" placeholder = "Area To" name = "arto"/></span>
- 	
- 	<span><input type = "text" placeholder = "Floor From" name = "floorfrom"/></span>
- 	<span><input type = "text" placeholder = "Floor To" name = "floorto"/></span>
- 	
- 	<button type="submit" value="Submit">Search</button>
- </form>
+ <div style = "width:1390px; margin:auto; padding:10px; ">
+	<form th:action="@{/web/building/search}" methor="Get" >
+	 	<span>
+		 	<input type = "text" placeholder = "Name" name = "name"/>
+		 	
+		 	<input type = "text" placeholder = "Area From" name = "arfrom"/>
+		 	<input type = "text" placeholder = "Area To" name = "arto"/>
+		 	
+		 	<input type = "text" placeholder = "Floor From" name = "floorfrom"/>
+		 	<input type = "text" placeholder = "Floor To" name = "floorto"/>
+	 	</span>
+	 	
+	 	<button type="submit" value="Submit">Search</button>
+	</form>
+</div>
 <br>
+
 <table align="center">
     <tr>
     	<th>Id</th>

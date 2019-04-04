@@ -50,6 +50,12 @@ tr:nth-child(odd) {background: #BBBBBB}
 	background: #cccccc;
 }
 
+.centerbutton {
+    height: 50px;
+    width: 100px;
+    margin: 20px auto;
+}
+
 /*Bich edit*/
 .container { width: 1200px; margin: 0 auto; padding-left: 15px; padding-right: 15px;}
 /*.overflow { overflow: hidden;}*/
@@ -77,4 +83,6 @@ tr:nth-child(odd) {background: #BBBBBB}
 .header ul.menu-1 li span { text-transform: none; padding-right: 0;}
 
 #container { margin-top: 100px;}
+
+
     

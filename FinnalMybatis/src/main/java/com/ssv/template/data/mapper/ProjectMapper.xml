@@ -25,7 +25,7 @@
     <resultMap id = "result" type = "Project"></resultMap>
     <select id="findByNameContaining" parameterType="string" resultMap="result">
   			SELECT * FROM Project 
-  			inner join building on Project.building_id = building.id
+  			left join building on Project.building_id = building.id
   			<if test="namebuilding != null and namebuilding != ''">
   				WHERE name like '%'||#{namebuilding}||'%'
   			</if>
