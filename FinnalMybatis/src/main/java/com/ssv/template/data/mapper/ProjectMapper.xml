@@ -25,19 +25,21 @@
     <resultMap id = "result" type = "Project"></resultMap>
     <select id="findByNameContaining" parameterType="string" resultMap="result">
   			SELECT * FROM Project 
-  			left join building on Project.building_id = building.id
-  			<if test="namebuilding != null and namebuilding != ''">
-  				WHERE name like '%'||#{namebuilding}||'%'
-  			</if>
-  			<if test="nameproject != null and nameproject != ''">
-  				WHERE nameproject like '%'||#{nameproject}||'%'
-  			</if>
-  			<if test="startsearch != null and startsearch != ''">
-				AND to_char(startdate, 'YYYY-MM-DD') > #{startsearch} 
-			</if>
-			<if test="endsearch != null and endsearch != ''">
-				and #{endsearch} > to_char(enddate, 'YYYY-MM-DD')
-			</if>
+  			left join building on (Project.building_id = building.id)
+  			<where>
+	  			<if test="namebuilding != null and namebuilding != ''">
+	  				name like '%'||#{namebuilding}||'%'
+	  			</if>
+	  			<if test="nameproject != null and nameproject != ''">
+	  				AND nameproject like '%'||#{nameproject}||'%'
+	  			</if>
+	  			<if test="startsearch != null and startsearch != ''">
+					AND to_char(startdate, 'YYYY-MM-DD') > #{startsearch} 
+				</if>
+				<if test="endsearch != null and endsearch != ''">
+					AND #{endsearch} > to_char(enddate, 'YYYY-MM-DD')
+				</if>
+			</where>
 	</select>
     
 	

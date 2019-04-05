@@ -12,15 +12,24 @@
 		  </tr>
 		  <tr>
 		      <td>Start:</td> 
-		      <td><input th:field="*{startdate}" placeholder = "yyyy-MM-dd"/></td>
+		      <td><input type="date" th:field="*{startdate}" ></td>
 		  </tr>
 		  <tr>
 		      <td>End:</td> 
-		      <td><input th:field="*{enddate}" placeholder = "yyyy-MM-dd"/></td>
+		      <td><input type="date" th:field="*{enddate}" ></td>
 		  </tr>
 		  <tr>
 		      <td>Building Id:</td> 
-		      <td><input th:field="*{buildingId}" placeholder = "number"/></td>
+		      
+		      <td><select th:field="*{buildingId}">
+		    	<option value="1">samsung</option>
+				<option value="2">tung</option>
+				<option value="3">hieu</option>
+				<option value="4">lien</option>		
+			    <option value="5">nhung</option>
+		      </select></td>
+		      
+		      
 		  </tr>
 		  <tr>
 		    <td><input type="submit" value="Submit" /></td>

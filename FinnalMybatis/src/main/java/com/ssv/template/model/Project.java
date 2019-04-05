@@ -10,8 +10,10 @@ import com.ssv.template.data.repository.BuildingRepository;
 public class Project {
 	private int id;
 	private String nameproject;
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startdate;
+	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date enddate;
 	private int buildingId;
@@ -43,7 +45,8 @@ public class Project {
 	public void setNameproject(String nameproject) {
 		this.nameproject = nameproject;
 	}
-
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public Date getStartdate() {
 		return startdate;
 	}
@@ -51,7 +54,8 @@ public class Project {
 	public void setStartdate(Date startdate) {
 		this.startdate = startdate;
 	}
-
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public Date getEnddate() {
 		return enddate;
 	}
@@ -67,5 +71,6 @@ public class Project {
 		}
 		return null;
 	}
-
+	
+	
 }

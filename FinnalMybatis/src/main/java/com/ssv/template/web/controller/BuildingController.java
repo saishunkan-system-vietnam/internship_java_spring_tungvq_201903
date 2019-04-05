@@ -85,7 +85,12 @@ public class BuildingController {
 	@RequestMapping("/search")
 	public String doSearch(@RequestParam("name") String name, @RequestParam("arfrom") String arfrom, @RequestParam("arto") String arto,@RequestParam("floorfrom") String floorfrom, @RequestParam("floorto") String floorto ,Model model) {
 		List<Building> building = new BuildingService().search(name,arfrom,arto,floorfrom,floorto);
-		model.addAttribute("buildingList", new BuildingService().search(name, arfrom, arto, floorfrom, floorto));
+		model.addAttribute("buildingList",building );
+		model.addAttribute("name", name);
+		model.addAttribute("arfrom", arfrom);
+		model.addAttribute("arto", arto);
+		model.addAttribute("floorfrom", floorfrom);
+		model.addAttribute("floorto", floorto);
 		return BASE_DIR + "/index";
 	}
 }

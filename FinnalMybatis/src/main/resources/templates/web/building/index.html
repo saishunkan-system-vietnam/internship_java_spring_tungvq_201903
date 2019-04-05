@@ -34,13 +34,13 @@
  <div style = "width:1390px; margin:auto; padding:10px; ">
 	<form th:action="@{/web/building/search}" methor="Get" >
 	 	<span>
-		 	<input type = "text" placeholder = "Name" name = "name"/>
+		 	<input type = "text" th:value= "${name}" placeholder = "Name" name = "name"/>
 		 	
-		 	<input type = "text" placeholder = "Area From" name = "arfrom"/>
-		 	<input type = "text" placeholder = "Area To" name = "arto"/>
+		 	<input type = "text" th:value= "${arfrom}" placeholder = "Area From" name = "arfrom"/>
+		 	<input type = "text" th:value= "${arto}" placeholder = "Area To" name = "arto"/>
 		 	
-		 	<input type = "text" placeholder = "Floor From" name = "floorfrom"/>
-		 	<input type = "text" placeholder = "Floor To" name = "floorto"/>
+		 	<input type = "text" th:value= "${floorfrom}" placeholder = "Floor From" name = "floorfrom"/>
+		 	<input type = "text" th:value= "${floorto}" placeholder = "Floor To" name = "floorto"/>
 	 	</span>
 	 	
 	 	<button type="submit" value="Submit">Search</button>

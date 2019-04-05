@@ -42,9 +42,10 @@ h1 {
 	<div style="width:1358px; margin:auto;padding:10px;">
 		<form th:action="@{/web/project/searchProject/search}" method="GET">
 			<span ><input type="text" th:value="${nameproject}" placeholder="Name Project Search" name="nameproject" >
-			<input type="text" th:value="${startsearch}"  placeholder="Day Start : yyyy-MM-dd " name="startsearch">
-			<input type="text" th:value="${endsearch}" placeholder="Day End : yyyy-MM-dd " name="endsearch">
+			<input type="date" th:value="${startsearch}"   name="startsearch">
+			<input type="date" th:value="${endsearch}"   name="endsearch">
 			<input type = "text" th:value= "${namebuilding}" placeholder = "find name building" name="namebuilding"></span>
+			
 			<button type="submit" value="Submit">Search</button>
 		</form>
 	</div>
@@ -57,6 +58,7 @@ h1 {
 					<th>Start Project</th>
 					<th>End Project</th>
 					<th>Building id</th>
+					<th>Building Name</th>
 					<th>Building area</th>
 					<th>DELETE</th>
 					<th>Edit</th>
@@ -67,17 +69,14 @@ h1 {
 				
 				<tr>
 					<td th:text="${project.id}"></td>
-					<td><a th:href="@{/web/project/view/} + ${project.id}"><p
-									th:text="${project.nameproject}"></p></a></td>
-					<td th:text="${project.startdate}"></td>
-					<td th:text="${project.enddate}"></td>
+					<td><a th:href="@{/web/project/view/} + ${project.id}"><p th:text="${project.nameproject}"></p></a></td>
+					<td th:text="${#dates.format(project.startdate, 'yyyy-MM-dd')}"></td>
+					<td th:text="${#dates.format(project.enddate, 'yyyy-MM-dd')}"></td>
 					<td th:text="${project.buildingId}"></td>
+					<td th:text="${project.referenceBuilding?.name}"></td>
 					<td th:text="${project.referenceBuilding?.area}"></td>
-					<td><a
-						th:href="@{/web/project/deleteProject/} + ${project.id}"
-						+ onclick="return confirmAction()">DELETE</a></td>
-					<td><a
-						th:href="@{/web/project/editproject-form/} + ${project.id}">Edit</a></td>
+					<td><a th:href="@{/web/project/deleteProject/} + ${project.id}" + onclick="return confirmAction()">DELETE</a></td>
+					<td><a th:href="@{/web/project/editproject-form/} + ${project.id}">Edit</a></td>
 					<td><a th:href="@{/web/project/view/} + ${project.id}">View</a></td>
 				</tr>
 				</th:block>
