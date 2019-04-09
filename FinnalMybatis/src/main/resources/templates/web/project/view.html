@@ -8,8 +8,10 @@
 	
 	ID: <span th:text="${project.id}"></span><br/>
 	Name Project: <span th:text="${project.nameproject}"></span><br/>
-	Start Project: <span th:text="${project.startdate}"></span><br/>
-	End Project: <span th:text="${project.enddate}"></span><br/><br>
+	Start Project: <span th:text="${#dates.format(project.startdate, 'yyyy-MM-dd')}"></span><br/>
+	End Project: <span th:text="${#dates.format(project.enddate,'yyyy-MM-dd')}"></span><br/>
+	Building Id: <span th:text="${project.buildingId}"></span><br/>
+	Building Name: <span th:text="${project.referenceBuilding?.name}"></span><br/><br/>
 	<input type="button" value="Back" onclick = "window.location.href='/web/project/index2';">
 	
 </body>

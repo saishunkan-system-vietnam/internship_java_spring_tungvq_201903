@@ -1,13 +1,27 @@
 <html xmlns="http://www.thymeleaf.org">
 <body>
 	<h1> Add Building</h1>
-	<input type="button" value="Back" onclick="window.location.href='/web/building/index'"><br/>
 	
 	<form th:action="@{/web/building/successAdd}" method="GET" th:object="${building}">
-		Name: <input th:field="*{name}" ><br/>
-		Area: <input th:field="*{area}" ></br>
-		Floor:<input th:field="*{floor}"></br>
-		<input type="submit" value="Submit">
+		<table>
+		<tr>
+		<td>Name:</td> 
+		<td><input th:field="*{name}" ></td>
+		</tr>
+		<tr>
+		<td>Area:</td> 
+		<td><input th:field="*{area}" ></td>
+		</tr>
+		<tr>
+		<td>Floor:</td>
+		<td><input th:field="*{floor}"></td>
+		</tr>
+		<tr>
+		<td><input type="submit" value="Submit"></td>
+		<td><input type="button" value="Back Building" onclick="window.location.href='/web/building/index'"></td>
+		</tr>
+		</table></br>
+		<input type="button" value="Back Project" onclick="window.location.href='/web/project/index2'">
 	</form>
 	
 </body>

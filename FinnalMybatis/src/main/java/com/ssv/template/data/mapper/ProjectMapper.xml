@@ -11,7 +11,7 @@
         UPDATE Project SET NAMEPROJECT = #{nameproject} WHERE ID = #{id};
         UPDATE Project SET STARTDATE = #{startdate} WHERE ID = #{id};
         UPDATE Project SET ENDDATE = #{enddate} WHERE ID = #{id};
-     
+     	UPDATE Project SET BUILDING_ID = #{buildingId} WHERE ID = #{id};
     </update>
      
     <delete id="deleteProjectById" parameterType="int">

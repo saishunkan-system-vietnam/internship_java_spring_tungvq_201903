@@ -13,7 +13,7 @@ public interface Mapper<T> {
 	T findById(@Param("tableName") String tableName, @Param("primaryKeyName") String primaryKeyName,
 			@Param("id") int id);
 
-	@Select("select * from ${tableName}")
+	@Select("select * from ${tableName} ")
 	List<T> findAll(@Param("tableName") String tableName);
 
 	@Select("select count(1) from ${tableName}")

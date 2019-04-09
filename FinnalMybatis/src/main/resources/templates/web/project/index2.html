@@ -35,9 +35,16 @@ h1 {
 	</div>
 	
 	<div style="width:1358px; margin:auto;padding:10px;">
-			<div style="text-align:left;"><input type="button" value="Add Project" align="center"
-				onclick="window.location.href='/web/project/addproject'; return false;" /></div>
+			<div style="text-align:left;">
+				<span><input type="button" value="Add Project" align="center"
+				onclick="window.location.href='/web/project/addproject'; return false;" />
+				<input type="button" value="Add Building" 
+				onclick="window.location.href='/web/building/addbuilding'; return false;" /></span>
+			</div>
+				
 	</div>
+	
+	
 	
 	<div style="width:1358px; margin:auto;padding:10px;">
 		<form th:action="@{/web/project/searchProject/search}" method="GET">
@@ -60,6 +67,7 @@ h1 {
 					<th>Building id</th>
 					<th>Building Name</th>
 					<th>Building area</th>
+					<th>Building floor</th>
 					<th>DELETE</th>
 					<th>Edit</th>
 					<th>View</th>
@@ -75,6 +83,7 @@ h1 {
 					<td th:text="${project.buildingId}"></td>
 					<td th:text="${project.referenceBuilding?.name}"></td>
 					<td th:text="${project.referenceBuilding?.area}"></td>
+					<td th:text="${project.referenceBuilding?.floor}"></td>
 					<td><a th:href="@{/web/project/deleteProject/} + ${project.id}" + onclick="return confirmAction()">DELETE</a></td>
 					<td><a th:href="@{/web/project/editproject-form/} + ${project.id}">Edit</a></td>
 					<td><a th:href="@{/web/project/view/} + ${project.id}">View</a></td>
