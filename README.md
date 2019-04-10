@@ -49,3 +49,9 @@ Tạo màn hình danh sách project có chức năng tìm kiếm theo
  + ngày bắt đầu
  + ngày kết thúc
  + tên building (nâng cao)
+====================================================================================
+Tiếp tục trainning API (2019/04/10)
+
++ Tạo API tìm kiếm trên danh sách project
++ Tạo API thêm, sửa, xóa building
++ Tạo API thêm, sửa, xóa project
