@@ -39,7 +39,7 @@ public class ProjectRepository extends Repository<Project, ProjectMapper> {
 			return mapper.deleteProjectById(id);
 		});
 	}
-
+	
 	public List<Project> findByNameContaining(String nameproject,String startsearch,String endsearch, String namebuilding) {
 		return execute((mapper) -> {
 			return mapper.findByNameContaining(nameproject,startsearch,endsearch,namebuilding);
@@ -52,8 +52,6 @@ public class ProjectRepository extends Repository<Project, ProjectMapper> {
 		});
 	}
 
-	
-	
 }
 	
 

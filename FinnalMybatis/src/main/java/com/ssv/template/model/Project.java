@@ -26,10 +26,6 @@ public class Project {
 		this.buildingId = buildingId;
 	}
 
-	public void setBuildingId(int buildingId) {
-		this.buildingId = buildingId;
-	}
-
 	public int getId() {
 		return id;
 	}

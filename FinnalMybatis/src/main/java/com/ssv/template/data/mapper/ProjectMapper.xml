@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssv.template.data.mapper.ProjectMapper">
 	<insert id="insertProject" parameterType="Project" >
+		
         INSERT INTO Project (NAMEPROJECT, STARTDATE, ENDDATE, BUILDING_ID) VALUES (#{nameproject},#{startdate},#{enddate},#{buildingId});
     </insert>
  
@@ -28,7 +29,7 @@
   			left join building on (Project.building_id = building.id)
   			<where>
 	  			<if test="namebuilding != null and namebuilding != ''">
-	  				name like '%'||#{namebuilding}||'%'
+	  				name like '%'||#{namebuilding}||'%' 
 	  			</if>
 	  			<if test="nameproject != null and nameproject != ''">
 	  				AND nameproject like '%'||#{nameproject}||'%'

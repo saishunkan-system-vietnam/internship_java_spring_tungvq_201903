@@ -80,7 +80,9 @@ h1 {
 					<td><a th:href="@{/web/project/view/} + ${project.id}"><p th:text="${project.nameproject}"></p></a></td>
 					<td th:text="${#dates.format(project.startdate, 'yyyy-MM-dd')}"></td>
 					<td th:text="${#dates.format(project.enddate, 'yyyy-MM-dd')}"></td>
-					<td th:text="${project.buildingId}"></td>
+					
+					<td th:text="${project.buildingId} ? ${project.buildingId}  : ' '"></td>
+					
 					<td th:text="${project.referenceBuilding?.name}"></td>
 					<td th:text="${project.referenceBuilding?.area}"></td>
 					<td th:text="${project.referenceBuilding?.floor}"></td>

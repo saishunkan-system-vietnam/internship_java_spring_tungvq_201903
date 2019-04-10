@@ -25,6 +25,7 @@
 			<td>Building Id:</td> 
 		      
 		      <td><select th:field="*{buildingId}" id="a">
+		      	<option th:value = "0"> </option>
 		    	<option th:each = "a:${building}" th:value="${a.id}" th:text="${a.name}"></option>
 			
 		      </select></td>

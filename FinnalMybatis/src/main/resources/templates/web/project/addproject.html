@@ -8,21 +8,21 @@
 	  <table>
 		  <tr>
 		      <td>Name:</td> 
-		      <td><input th:field="*{nameproject}" placeholder = "Ten du an"/></td>
+		      <td><input th:field="*{nameproject}" placeholder = "Ten du an" required/></td>
 		  </tr>
 		  <tr>
 		      <td>Start:</td> 
-		      <td><input type="date" th:field="*{startdate}" ></td>
+		      <td><input type="date" th:field="*{startdate}" required></td>
 		  </tr>
 		  <tr>
 		      <td>End:</td> 
-		      <td><input type="date" th:field="*{enddate}" ></td>
+		      <td><input type="date" th:field="*{enddate}" required></td>
 		  </tr>
 		  <tr>
 		      <td>Building Id:</td> 
 		      
 		      <td><select th:field="*{buildingId}" id="a">
-		      	<option th:value = "0"> </option>
+		      	<option th:value="0"></option>
 		    	<option th:each = "a:${building}" th:value="${a.id}" th:text="${a.name}"></option>
 			
 		      </select></td>
