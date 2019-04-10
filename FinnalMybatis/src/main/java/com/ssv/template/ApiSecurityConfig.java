@@ -14,12 +14,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
 @EnableWebSecurity
 @Order(1)
 public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	@Qualifier("WebUserDetailsService")
+	private UserDetailsService service;
 	
 	@Autowired
 	@Qualifier("ApiFailureHandler")
@@ -70,6 +73,6 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		//auth.userDetailsService(service).passwordEncoder(new Md5PasswordEncoder());
+		auth.userDetailsService(service).passwordEncoder(new Md5PasswordEncoder());
 	}
 }
