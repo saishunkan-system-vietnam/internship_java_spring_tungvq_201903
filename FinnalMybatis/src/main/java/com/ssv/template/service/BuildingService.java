@@ -11,6 +11,10 @@ public class BuildingService {
 	public int insertBuilding(Building building) {
 		return new BuildingRepository().insertBuilding(building);
 	}
+	
+	public Building insertBuilding1(Building building) {
+		return new BuildingRepository().insertBuilding1(building);
+	}
 
 	public int updateBuilding(Building building) {
 		return new BuildingRepository().updateBuilding(building);

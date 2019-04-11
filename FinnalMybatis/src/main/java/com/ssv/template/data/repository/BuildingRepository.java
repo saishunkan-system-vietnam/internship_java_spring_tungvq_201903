@@ -44,6 +44,12 @@ public class BuildingRepository extends Repository<Building, BuildingMapper> {
 			return mapper.findByParam(name,arfrom,arto,floorfrom, floorto);
 		});
 	}
+
+	public Building insertBuilding1(Building building) {
+		return execute((mapper) -> {
+			return mapper.insertBuilding1(building);
+		});
+	}
 	
 
 }

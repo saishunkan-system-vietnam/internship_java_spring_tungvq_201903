@@ -17,4 +17,6 @@ public interface BuildingMapper extends Mapper<Building> {
 	
 	List<Building> findByParam(@Param("name") String name,@Param("arfrom") String arfrom,@Param("arto") String arto,@Param("floorfrom") String floorfrom,
 			@Param("floorto") String floorto);
+
+	public Building insertBuilding1(Building building);
 }
