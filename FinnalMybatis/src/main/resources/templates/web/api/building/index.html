@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Demo</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	</head>
+	<body>
+		<div id="result">JSON</div>
+		<input type="button" name="clickme" id="json-click" value="get list by json"/>
+		 <script language="javascript">
+            $('#text-click').click(function()
+            		var data = {};
+            {
+                $.ajax({
+                    url : 'http://localhost:8080/api/building/list',
+                    type : 'get',
+                    dataType : 'text',
+                    data: data;
+                    success : function (result){
+                        console.log(result);
+                    }
+                });
+            });
+        </script>
+	</body>
+</html>
