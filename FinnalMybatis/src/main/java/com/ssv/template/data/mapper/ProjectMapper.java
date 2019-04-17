@@ -21,6 +21,7 @@ public interface ProjectMapper extends Mapper<Project> {
 	
 	List<Project> findByNameContaining(@Param("nameproject") String nameproject,@Param("startsearch") String startsearch,@Param("endsearch") String endsearch,@Param("namebuilding") String namebuilding);
 	
+	List<Project> findByNameContaining1(@Param("nameproject") String nameproject);
 	
 	List<Project> findByDateContaining(String b);
 	

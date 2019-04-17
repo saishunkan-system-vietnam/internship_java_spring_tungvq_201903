@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.ssv.template.data.mapper.BuildingMapper;
 import com.ssv.template.model.Building;
+import com.ssv.template.model.Project;
 import com.ssv.template.utils.AppStringUtils;
 
 public class BuildingRepository extends Repository<Building, BuildingMapper> {
@@ -51,5 +52,10 @@ public class BuildingRepository extends Repository<Building, BuildingMapper> {
 		});
 	}
 	
+	public List<Building> findByNameContaining(String name) {
+		return execute((mapper) -> {
+			return mapper.findByNameContaining(name);
+		});
+	}
 
 }

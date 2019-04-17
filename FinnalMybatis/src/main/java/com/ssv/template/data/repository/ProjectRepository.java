@@ -51,6 +51,13 @@ public class ProjectRepository extends Repository<Project, ProjectMapper> {
 			return mapper.findByDateContaining(b);
 		});
 	}
+	
+	public List<Project> findByNameContaining1(String nameproject) {
+		return execute((mapper) -> {
+			return mapper.findByNameContaining1(nameproject);
+		});
+	}
+
 
 }
 	

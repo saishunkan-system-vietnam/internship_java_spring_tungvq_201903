@@ -36,4 +36,9 @@
   		</if>
     </select>
      
+    <resultMap id = "result1" type = "Building"></resultMap>
+    <select id="findByNameContaining" parameterType="string" resultMap="result"> 
+    	SELECT * FROM Building WHERE name like '%'||#{name}||'%'
+    </select>
+    
 </mapper>

@@ -43,5 +43,8 @@
 			</where>
 	</select>
     
-	
+	<resultMap id = "result1" type = "Project"></resultMap>
+    <select id="findByNameContaining1" parameterType="string" resultMap="result"> 
+    	SELECT * FROM Project WHERE NAMEPROJECT like '%'||#{nameproject}||'%'
+    </select>
 </mapper>

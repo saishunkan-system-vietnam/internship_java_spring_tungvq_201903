@@ -26,10 +26,12 @@ body{
 <div style = "width:1400px; margin:auto; padding:10px; ">
 	<input type="button" value="Add Building" align="center"
 	onclick = "window.location.href='/web/building/addbuilding'; return false;"/><br/>
+	
+	
+</div>
 	<input type="button" name="clickme" id="json-click" value="get list by json"/>
 	
 	<div id="div_show"></div>
-</div>
  
  <div style = "width:1400px; margin:auto; padding:10px; ">
 	<form th:action="@{/web/building/search}" methor="Get" >
@@ -47,6 +49,8 @@ body{
 	</form>
 </div>
 <br>
+
+
 
 <table align="center"  >
     <tr>

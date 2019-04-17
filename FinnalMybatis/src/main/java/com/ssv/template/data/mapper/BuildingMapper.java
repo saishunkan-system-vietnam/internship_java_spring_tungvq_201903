@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.ssv.template.model.Building;
 
+
 public interface BuildingMapper extends Mapper<Building> {
 	public int insertBuilding(Building building);
 
@@ -17,6 +18,8 @@ public interface BuildingMapper extends Mapper<Building> {
 	
 	List<Building> findByParam(@Param("name") String name,@Param("arfrom") String arfrom,@Param("arto") String arto,@Param("floorfrom") String floorfrom,
 			@Param("floorto") String floorto);
+	
+	List<Building> findByNameContaining(@Param("name") String name);
 
 	public Building insertBuilding1(Building building);
 }

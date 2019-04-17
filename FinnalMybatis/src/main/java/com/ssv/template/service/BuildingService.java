@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import com.ssv.template.data.repository.BuildingRepository;
+import com.ssv.template.data.repository.ProjectRepository;
 import com.ssv.template.model.Building;
+import com.ssv.template.model.Project;
 
 public class BuildingService {
 
@@ -40,5 +42,10 @@ public class BuildingService {
 			String floorfrom, String floorto) {
 			return new BuildingRepository().findByParam(name, arfrom, arto, floorfrom, floorto);
 	}
+	public List<Building> searchName(String name) {
+		 return new BuildingRepository().findByNameContaining(name);
+	}
+
+	
 	
 }

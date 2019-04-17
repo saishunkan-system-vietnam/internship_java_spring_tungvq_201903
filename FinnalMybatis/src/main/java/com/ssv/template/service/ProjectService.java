@@ -41,6 +41,10 @@ public class ProjectService {
 	public List<Project> searchStart(String b) {
 		 return new ProjectRepository().findByDateContaining(b);
 	}
+	
+	public List<Project> searchName(String nameproject){
+		return new ProjectRepository().findByNameContaining1(nameproject);
+	}
 
 
 

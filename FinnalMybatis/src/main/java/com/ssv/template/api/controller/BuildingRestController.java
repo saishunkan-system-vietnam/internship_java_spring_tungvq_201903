@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssv.template.data.repository.BuildingRepository;
@@ -71,5 +72,14 @@ public class BuildingRestController {
 		building.setFloor(buildingForm.getFloor());
 		int result = new BuildingService().updateBuilding(building);
 		return building;
+	}
+	
+	@RequestMapping( value = "/search", method = RequestMethod.GET )
+	public ResponseEntity<List<Building>> searchBuilding(@RequestParam("name") String name ) {
+		List<Building> list = new BuildingService().searchName(name);
+		if (list.isEmpty()) {
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Building>>(list, HttpStatus.OK);
 	}
 }

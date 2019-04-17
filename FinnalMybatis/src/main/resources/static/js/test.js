@@ -7,16 +7,16 @@ function confirmAction() {
 	/*   alert("aa") */
 	  var data = {};
           $.ajax({
-              url : 'http://localhost:8080/api/building/list',
+              url : 'http://localhost:8080/api/building/list',	
               type : 'get',
               dataType : 'text',
               data: data,
               success : function (result){
-                  console.log(result);
+                  console.log(result[1].name);
                   var obj = JSON.parse(result);
                   $("#div_show").html(result);
 	                  obj.forEach(function(element){
-	                	 console.log(element.name); 
+	                	 console.log(element.name);
 	                  });
 	                  
 	              }
